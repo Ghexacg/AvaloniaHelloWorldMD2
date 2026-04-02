@@ -1,0 +1,82 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:material="using:Material.Styles"
+         xmlns:materialIcons="using:Material.Icons.Avalonia"
+         x:Class="AvaloniaHelloWorldMD2.MainView">
+
+<Panel Background="{DynamicResource MaterialPaperBrush}">
+    <!-- Material Design AppBar -->
+    <DockPanel>
+        <material:Card DockPanel.Dock="Top"
+                      CornerRadius="0"
+                      Padding="16"
+                      Background="{DynamicResource PrimaryHueMidBrush}">
+            <TextBlock Text="Hello World MD2"
+                       FontSize="20"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       VerticalAlignment="Center"/>
+        </material:Card>
+
+        <!-- Main Content Area -->
+        <ScrollViewer>
+            <StackPanel Margin="16" Spacing="16"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+
+                <!-- Material Card with Hello World -->
+                <material:Card Padding="24"
+                              CornerRadius="12"
+                              Width="320">
+                    <StackPanel Spacing="16" HorizontalAlignment="Center">
+                        <materialIcons:MaterialIcon Kind="HandWave"
+                                                    Width="64" Height="64"
+                                                    Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+
+                        <TextBlock Text="Hello, World!"
+                                   FontSize="28"
+                                   FontWeight="Bold"
+                                   HorizontalAlignment="Center"
+                                   Foreground="{DynamicResource PrimaryHueMidBrush}"/>
+
+                        <TextBlock Text="Welcome to Avalonia with Material Design 2"
+                                   FontSize="14"
+                                   HorizontalAlignment="Center"
+                                   Foreground="{DynamicResource MaterialBodyBrush}"
+                                   TextWrapping="Wrap"
+                                   TextAlignment="Center"/>
+
+                        <Separator Margin="0,8"/>
+
+                        <TextBlock Text="This is a cross-platform Android app built with C# and Avalonia UI, featuring Material Design 2 styling."
+                                   FontSize="12"
+                                   HorizontalAlignment="Center"
+                                   Foreground="{DynamicResource MaterialBodyLightBrush}"
+                                   TextWrapping="Wrap"
+                                   TextAlignment="Center"/>
+                    </StackPanel>
+                </material:Card>
+
+                <!-- Material FAB Button -->
+                <Button Classes="Flat"
+                        HorizontalAlignment="Center"
+                        Click="OnGreetButtonClick">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <materialIcons:MaterialIcon Kind="MessageText" Width="20" Height="20"/>
+                        <TextBlock Text="Say Hello" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+
+                <!-- Response Text -->
+                <TextBlock x:Name="ResponseText"
+                           FontSize="16"
+                           HorizontalAlignment="Center"
+                           Foreground="{DynamicResource SecondaryHueMidBrush}"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"/>
+
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</Panel>
+</UserControl>
